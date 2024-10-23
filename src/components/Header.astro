@@ -1,0 +1,25 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
+const { class: className } = Astro.props;
+---
+
+<header
+  class={`z-20 md:py-3 px-0 w-full flex justify-center sticky top-0 ${className}`}
+>
+  <!-- Navigation links -->
+  <ul role="menubar" aria-label="Select page" class="flex bg-slate-950/60 md:bg-transparent md:w-min w-full justify-center h-14 backdrop-blur-md rounded-br-lg rounded-bl-lg md:rounded-full md:px-2 ">
+     <li role="none" class="flex">
+      <HeaderLink href="/">Home</HeaderLink>
+    </li>
+    <li role="none" class="flex">
+      <HeaderLink href="#about">About</HeaderLink>
+    </li>
+    <li role="none" class="flex">
+      <HeaderLink href="#projects">Portfolio</HeaderLink>
+    </li>
+    <li role="none" class="flex">
+      <HeaderLink href="#experience">Experience</HeaderLink>
+    </li>
+  </ul>
+</header>

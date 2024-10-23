@@ -1,0 +1,174 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Slider from "../components/Slider.astro";
+
+import CardProject from "../components/CardProject.astro";
+
+const professionalExperience = [
+  {
+    title: "Practicante Analista de datos",
+    enterprise: "Banco de la Nación",
+    description: [
+      [
+        "Desarrollo de interfaces gráficas con Tkinter para la ejecución de procesos de limpieza de datos en Python.",
+        "Limpieza y procesamiento de datos utilizando Python y C#, logrando optimizar la velocidad de estos procesos en un 70%.",
+        "Implementación de procesos de limpieza y carga de datos en la base de datos usando tecnologías .NET y C#, mejorando la eficiencia del sistema interno de datos.",
+        "Automatización de procesos mediante macros en Excel, lo que redujo significativamente el tiempo de preparación de informes para cumplir con los plazos establecidos.",
+        "Colaboración con equipos multifuncionales para integrar datos en sistemas internos y mejorar la calidad de los informes generados.",
+      ],
+    ],
+    technologies: ["Python", "SQLServer", "C#", ".NET", "Excel"],
+  },
+];
+
+const projects = [
+  {
+    title: "Dating App",
+    description: "Aplicación de citas para encontrar pareja.",
+    image: [
+      "https://picsum.photos/id/1074/800/600",
+      "https://picsum.photos/id/1070/800/600",
+    ],
+    linkDemo: "https://example.com/dating-app-demo",
+    linkCode: "https://example.com/dating-app-code",
+  },
+  {
+    title: "Project Two",
+    description: "Description for project one.",
+    image: [
+      "https://picsum.photos/id/1084/800/600",
+      "https://picsum.photos/id/1080/800/600",
+    ],
+    linkDemo: "https://example.com/project-one-demo",
+    linkCode: "https://example.com/project-one-code",
+  },
+];
+
+ const languageProgramming = [
+  
+ ]
+
+---
+
+<!doctype html>
+<html lang="es" class="bg-slate-950">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="bg-radial-gradient from-slate-700 to-slate-950">
+    <Header />
+    <main class="px-44">
+    <!-- Home Section -->
+    <section id="home" class="text-center py-12 h-svh -mt-20 max-h-screen flex flex-col items-center justify-center">
+      <h1 class="md:text-6xl font-bold">Hola, soy Edwin Martin</h1>
+      <p class="md:text-2xl mt-2">Ingeniero de Software <span class="text-teal-400">Desarrollador Full Stack</span>.<br />De Lima, Perú. Apasionado por la tecnología y el análisis de datos.</p>
+      <button class="bg-teal-500 hover:bg-teal-600 text-white text-md font-semibold py-2 px-4 rounded-full mt-6">Disponible para trabajar</button>
+      <!-- Social links -->
+      <div class="flex justify-center gap-4 mt-4">
+        <a href="https://linkedin.com/in/martin-anton/" class="text-teal-400">LinkedIn</a>
+        <a href="#" class="text-teal-400">GitHub</a>
+        <a href="mailto:edwin.anton.guerrero@gmail.com" class="text-teal-400">Email</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+      <h2 class="text-3xl font-bold text-center mb-8">Sobre mí</h2>
+      <div class="flex justify-between">
+        <div class="p-6 w-2/3">
+          <p>Mi nombre es Edwin Martin Anton Guerrero, tengo 22 años, y desde la secundaria desarrollé un fuerte interés por la tecnología. Fue en esa etapa donde descubrí mi pasión por la programación, empezando a aprender lenguajes básicos y experimentando con el desarrollo de software.</p>
+          <p>Hoy en día, estudio Ingeniería de Software en la Universidad Nacional Mayor de San Marcos y trabajo como analista de datos en el Banco de la Nación. Mi objetivo es convertirme en un desarrollador de software profesional, enfocándome en el desarrollo de aplicaciones web y móviles, y siempre buscando nuevas maneras de optimizar procesos y mejorar la experiencia de usuario.</p>
+        </div>
+        <img src="https://picsum.photos/id/1074/800/600" alt="" class="h-60">
+      </div>
+      
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20">
+      <h2 class="text-3xl font-bold text-center mb-8">Educación</h2>
+      <div class="relative">
+        <div class="border-l-4 border-teal-500 absolute h-full left-1/2 transform -translate-x-1/2"></div>
+        <div class="space-y-8">
+          <div class="flex items-center w-full">
+            <div class="w-1/2 pr-8">
+              <div class="p-6">
+                <h3 class="text-2xl font-semibold mb-2">Ingeniería de Software</h3>
+                <p class="text-gray-300">Universidad Nacional Mayor de San Marcos</p>
+                <p class="text-gray-400">2020 - Actualidad (X Ciclo)</p>
+                <p class="text-gray-300">Cursos relevantes: Responsive Web Design, Parallel and Concurrent Programming with C++</p>
+              </div>
+            </div>
+            <div class="w-1/2"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+      <h2 class="text-3xl font-bold text-center mb-8">Habilidades</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-semibold mb-4">Frontend</h2>
+          <ul class="list-disc list-inside text-gray-700">
+            <li>HTML, CSS, JavaScript</li>
+            <li>React, TailwindCSS, Bootstrap</li>
+            <li>Flutter, Material Design</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-semibold mb-4">Backend</h2>
+          <ul class="list-disc list-inside text-gray-700">
+            <li>Node.js, Express</li>
+            <li>SQL, MongoDB</li>
+            <li>.NET, C#, Python</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+      <h2 class="text-3xl font-bold text-center mb-8">Experiencia</h2>
+      <div class="grid grid-cols-1 gap-8">
+        <div class="bg-white p-10 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold mb-2">Practicante Analista de Datos</h3>
+          <h4 class="text-xl font-medium mb-2">Banco de la Nación - Lima, Perú</h4>
+          <ul class="list-disc list-inside text-gray-700">
+            <li>Desarrollo de interfaces gráficas con Tkinter para la ejecución de procesos de limpieza de datos en Python.</li>
+            <li>Limpieza y procesamiento de datos utilizando Python y C#, optimizando la velocidad en un 70%.</li>
+            <li>Implementación de procesos de carga de datos en .NET, mejorando la eficiencia del sistema.</li>
+            <li>Automatización de informes con macros en Excel, reduciendo tiempos considerablemente.</li>
+          </ul>
+          <div class="mt-4">
+            <span class="inline-block bg-gray-200 text-gray-800 text-sm px-2 py-1 rounded-full mr-2 mb-2">Python</span>
+            <span class="inline-block bg-gray-200 text-gray-800 text-sm px-2 py-1 rounded-full mr-2 mb-2">C#</span>
+            <span class="inline-block bg-gray-200 text-gray-800 text-sm px-2 py-1 rounded-full mr-2 mb-2">.NET</span>
+            <span class="inline-block bg-gray-200 text-gray-800 text-sm px-2 py-1 rounded-full mr-2 mb-2">SQL Server</span>
+            <span class="inline-block bg-gray-200 text-gray-800 text-sm px-2 py-1 rounded-full mr-2 mb-2">Excel</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+      <h2 class="text-3xl font-bold text-center mb-8">Proyectos</h2>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        {projects.map(project => (
+          <CardProject 
+              title={project.title} 
+              description={project.description}, 
+              image = {project.image},
+              linkDemo = {project.linkDemo},
+              linkCode = {project.linkCode}, />
+      ))}
+      </div>
+    </section>
+    </main>
+  </body>
+</html>
