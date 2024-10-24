@@ -4,55 +4,17 @@ const { list } = Astro.props;
 
 ---
 
-<style>
-  .slider {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-  }
-
-  .slider-track {
-    width: 100%;
-    display: flex;
-    animation: scroll 30s linear infinite;
-  }
-
-  .icon-slide {
-    flex: 0 0 20%; /* Muestra 5 iconos a la vez (100% / 5 = 20%) */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-  }
-
-  img {
-    max-width: 80px; /* Tamaño máximo del icono */
-    height: auto;
-  }
-
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-
-</style>
-
-<div class="slider">
-  <div class="slider-track">
-    {list.map((icon) => (
-      <div class="icon-slide">
-        <img src={icon} alt="icon" />
+<div class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+  <ul class="flex justify-around [&_li]:mx-8 w-full animate-infinite-scroll">
+  {list.map((object) => (
+    <li class=" flex flex-col gap-2 items-center justify-center">
+      <div class="h-24 w-24 flex flex-col">
+        <img src={object.icon} alt={object.name} class="h-full w-full object-cover" />
       </div>
-    ))}
-    {list.map((icon) => (
-        <div class="icon-slide">
-          <img src={icon} alt="icon" />
-        </div>
-      ))}
-  </div>
+      <p>{object.name}</p>
+    </li>
+  ))}
+  </ul>
+  
+  
 </div>

@@ -8,18 +8,21 @@ const { class: className } = Astro.props;
   class={`z-20 md:py-3 px-0 w-full flex justify-center sticky top-0 ${className}`}
 >
   <!-- Navigation links -->
-  <ul role="menubar" aria-label="Select page" class="flex bg-slate-950/60 md:bg-transparent md:w-min w-full justify-center h-14 backdrop-blur-md rounded-br-lg rounded-bl-lg md:rounded-full md:px-2 ">
-     <li role="none" class="flex">
-      <HeaderLink href="/">Home</HeaderLink>
+  <ul role="menubar" aria-label="Select page" class="flex flex-wrap md:flex-nowrap bg-slate-950/60 md:bg-transparent md:w-min w-full justify-center min-h-14 backdrop-blur-md rounded-br-lg rounded-bl-lg md:rounded-full md:px-2 ">
+    <li role="none" class="flex">
+      <HeaderLink href="#about">Sobre mí</HeaderLink>
     </li>
     <li role="none" class="flex">
-      <HeaderLink href="#about">About</HeaderLink>
+      <HeaderLink href="#education">Educación</HeaderLink>
     </li>
     <li role="none" class="flex">
-      <HeaderLink href="#projects">Portfolio</HeaderLink>
+      <HeaderLink href="#skills">Habilidades</HeaderLink>
     </li>
     <li role="none" class="flex">
-      <HeaderLink href="#experience">Experience</HeaderLink>
+      <HeaderLink href="#experience">Experiencia</HeaderLink>
+    </li>
+    <li role="none" class="flex">
+      <HeaderLink href="#projects">Proyectos</HeaderLink>
     </li>
   </ul>
 </header>
