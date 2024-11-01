@@ -7,47 +7,7 @@ import Slider from "../components/Slider.astro";
 
 import CardProject from "../components/CardProject.astro";
 
-const professionalExperience = [
-  {
-    title: "Practicante Analista de datos",
-    enterprise: "Banco de la Nación",
-    description: [
-      [
-        "Desarrollo de interfaces gráficas con Tkinter para la ejecución de procesos de limpieza de datos en Python.",
-        "Limpieza y procesamiento de datos utilizando Python y C#, logrando optimizar la velocidad de estos procesos en un 70%.",
-        "Implementación de procesos de limpieza y carga de datos en la base de datos usando tecnologías .NET y C#, mejorando la eficiencia del sistema interno de datos.",
-        "Automatización de procesos mediante macros en Excel, lo que redujo significativamente el tiempo de preparación de informes para cumplir con los plazos establecidos.",
-        "Colaboración con equipos multifuncionales para integrar datos en sistemas internos y mejorar la calidad de los informes generados.",
-      ],
-    ],
-    technologies: ["Python", "SQLServer", "C#", ".NET", "Excel"],
-  },
-];
-
-const projects = [
-  {
-    title: "Dating App",
-    description: "Aplicación de citas para encontrar pareja.",
-    image: [
-      "https://picsum.photos/id/1074/800/600",
-      "https://picsum.photos/id/1070/800/600",
-    ],
-    linkDemo: "https://example.com/dating-app-demo",
-    linkCode: "https://example.com/dating-app-code",
-  },
-  {
-    title: "Project Two",
-    description: "Description for project one.",
-    image: [
-      "https://picsum.photos/id/1084/800/600",
-      "https://picsum.photos/id/1080/800/600",
-    ],
-    linkDemo: "https://example.com/project-one-demo",
-    linkCode: "https://example.com/project-one-code",
-  },
-];
-
- const languagesList = [
+const allTechnologies = [
   {
     name: "Javascript",
     icon: "https://www.svgrepo.com/show/353925/javascript.svg"
@@ -61,10 +21,94 @@ const projects = [
     icon: "https://www.svgrepo.com/show/452091/python.svg"
   },
   {
-    name: "java",
-    icon: "https://www.svgrepo.com/show/452234/java.svg"
+    name: "React",
+    icon: "https://www.svgrepo.com/show/493719/react-javascript-js-framework-facebook.svg"
+  },
+  {
+    name: "HTML 5",
+    icon: "https://www.svgrepo.com/show/452228/html-5.svg"
+  },
+  {
+    name: "CSS 3",
+    icon: "https://www.svgrepo.com/show/452185/css-3.svg"
+  },
+  {
+    name: "TailwindCSS",
+    icon: "https://www.svgrepo.com/show/374118/tailwind.svg"
+  },
+  {
+    name: "Figma",
+    icon: "https://www.svgrepo.com/show/452202/figma.svg"
+  },
+  {
+    name: "Node.js",
+    icon: "https://www.svgrepo.com/show/376337/node-js.svg"
+  },
+  {
+    name: "Express",
+    icon: "https://adware-technologies.s3.amazonaws.com/uploads/technology/thumbnail/20/express-js.png"
+  },
+  {
+    name: "MongoDB",
+    icon: "https://www.svgrepo.com/show/373845/mongo.svg"
+  },
+  {
+    name: "SQL Server",
+    icon: "https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg"
+  },
+  {
+    name: "Firebase",
+    icon: "https://www.svgrepo.com/show/373595/firebase.svg"
+  },
+  {
+    name: "Flutter",
+    icon: "https://www.svgrepo.com/show/373604/flutter.svg"
+  },
+  {
+    name: "Kotlin",
+    icon: "https://www.svgrepo.com/show/373728/kotlin.svg"
+  },
+  {
+    name: "Android Studio",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Android_Studio_icon_%282023%29.svg/2048px-Android_Studio_icon_%282023%29.svg.png"
   }
- ]
+  ]
+
+const projects = [
+  {
+    title: "Dating App",
+    description: "Aplicación de citas diseñada para facilitar la conexión entre personas, ofreciendo una experiencia de usuario intuitiva y segura.",
+    image: [
+      'public/assets/dateapp_1.png',
+      'public/assets/dateapp_2.png',
+    ],
+    linkCode: "https://github.com/kevin-condezo/dating-app",
+    technologies: [
+      allTechnologies.find(tech => tech.name === "Java"),
+      allTechnologies.find(tech => tech.name === "Firebase"),
+      allTechnologies.find(tech => tech.name === "Android Studio")
+    ]
+  },
+  {
+    title: "StarGuide",
+    description: "Chatbot diseñado para ayudar a startups en su desarrollo inicial. El chatbot proporciona asistencia específica y personalizada a través de perfiles adaptados a diferentes temas y necesidades comunes en las etapas tempranas de una startup",
+    image: [
+      "https://github.com/martinxanton/Frontend_StartGuide/raw/main/screenshots/captura_7.jpeg",
+      "https://github.com/martinxanton/Frontend_StartGuide/raw/main/screenshots/captura_8.jpeg",
+    ],
+    linkCode: "https://github.com/martinxanton/Frontend_StartGuide",
+    linkDemo: "https://martinxanton.github.io/startguide",
+    technologies: [
+      allTechnologies.find(tech => tech.name === "Javascript"),
+      allTechnologies.find(tech => tech.name === "React"),
+      allTechnologies.find(tech => tech.name === "Node.js"),
+      allTechnologies.find(tech => tech.name === "MongoDB"),
+      allTechnologies.find(tech => tech.name === "Express"),
+    ]
+  },
+];
+
+  
 
  const frontendList = [
   {
@@ -192,12 +236,12 @@ const projects = [
     <!-- About Section -->
     <section id="about" >
       <h2 class="text-3xl font-bold text-center mb-16">Sobre mí</h2>
-      <div class="flex justify-between md:flex-row flex-col md:items-center gap-10">
+      <div class="flex lg:justify-between items-center md:flex-row flex-col gap-10">
         <div class="md:w-2/3 text-justify">
           <p>Mi nombre es Edwin Martin Anton Guerrero, tengo 22 años, y desde la secundaria desarrollé un fuerte interés por la tecnología. Fue en esa etapa donde descubrí mi pasión por el código y poco a poco fui experimentando con el desarrollo de software.</p>
           <p>Actualmente, estudio Ingeniería de Software en la Universidad Nacional Mayor de San Marcos y trabajo como analista de datos en el Banco de la Nación. Mi meta es convertirme en un desarrollador de software profesional, especializado en el desarrollo de aplicaciones web y móviles, con el propósito de crear soluciones innovadoras que generen un impacto positivo en el mundo.</p>
         </div>
-        <img src="https://picsum.photos/id/1074/800/600" alt="" class="h-60 rounded-tr-3xl rounded-tl-3xl rounded-bl-3xl">
+        <img src="public/assets/photo.jpg" alt="" class="lg:h-60 lg:w-60 h-40 w-40 rounded-full">
       </div>
       
     </section>
@@ -277,7 +321,10 @@ const projects = [
               description={project.description}, 
               image = {project.image},
               linkDemo = {project.linkDemo},
-              linkCode = {project.linkCode}, />
+              linkCode = {project.linkCode},
+              mobile = {project.mobile},
+              technologies = {project.technologies}
+              />
       ))}
       </div>
     </section>
@@ -295,7 +342,6 @@ const projects = [
         alert?.classList.replace("flex", "hidden")
       }, 3000)
     }
-  
-    document.getElementById("email").addEventListener("click", copyEmail)
+    document.getElementById("email")?.addEventListener("click", copyEmail)
   </script>
 </html>
